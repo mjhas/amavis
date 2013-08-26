@@ -1,0 +1,13 @@
+{
+  "name": "mjhas-amavis",
+  "version": "0.0.1",
+  "summary": "",
+  "author": "mjhas",
+  "description": "This Clamav Module installs clamav",
+  "dependencies": [],
+  "types": [],
+  "checksums": {},
+  "source": "https://github.com/mjhas/amavis.git",
+  "project_page": "https://github.com/mjhas/amavis",
+  "license": "Apache License 2.0"
+}
