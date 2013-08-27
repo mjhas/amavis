@@ -1,6 +1,4 @@
 install:
-  - sudo apt-get update
-  - sudo apt-get install puppet libxml2-dev libreadline-dev augeas-lenses libaugeas-dev 
   - sudo touch /etc/init.d/amavis
 language: ruby
 bundler_args: --without development
