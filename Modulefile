@@ -1,5 +1,5 @@
 name    'mjhas-amavis'
-version '0.0.2'
+version '1.0.0'
 source 'https://github.com/mjhas/amavis.git'
 author 'mjhas'
 license 'Apache License 2.0'

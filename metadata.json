@@ -1,12 +1,28 @@
 {
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">=2.7.20 <4.0.0"
+    }
+  ],
   "name": "mjhas-amavis",
-  "version": "0.0.2",
-  "summary": "",
+  "version": "1.0.0",
   "author": "mjhas",
-  "description": "This Clamav Module installs clamav",
-  "dependencies": [],
-  "types": [],
-  "checksums": {},
+  "summary": "This Clamav Module installs clamav",
+  "dependencies": [], 
   "source": "https://github.com/mjhas/amavis.git",
   "project_page": "https://github.com/mjhas/amavis",
   "license": "Apache License 2.0"
