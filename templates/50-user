@@ -14,17 +14,24 @@ $spam_quarantine_to  = undef;
 $sa_tag_level_deflt  = -100;
 
 <% if @final_virus_destiny %>
-$final_virus_destiny=<%= @final_virus_destiny %>
+$final_virus_destiny=<%= @final_virus_destiny %>;
 <% end %>
 <% if @final_banned_destiny %>
-$final_banned_destiny = <%= @final_banned_destiny %>
+$final_banned_destiny = <%= @final_banned_destiny %>;
 <% end %>
 <% if @final_spam_destiny %>
-$final_spam_destiny = <%= @final_spam_destiny %>
+$final_spam_destiny = <%= @final_spam_destiny %>;
 <% end %>
 <% if @final_bad_header_destiny %>
-$final_bad_header_destiny = <%= @final_bad_header_destiny %>
+$final_bad_header_destiny = <%= @final_bad_header_destiny %>;
 <% end %>
+
+<% if ! @extra_parameters.empty? -%>
+# Parameters set using 'extra_parameters'
+<% @extra_parameters.sort_by {|key,value| key}.each do |key,value| -%>
+<%= key %> = <% if value.is_a?(Array) %><%= value.join(', ') %><% else %><%= value %><% end %>;
+<% end -%>
+<% end -%>
 
 #------------ Do not modify anything below this line -------------
 1;  # ensure a defined return
