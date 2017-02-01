@@ -21,7 +21,11 @@ Simple Configuration:
     include amavis
 
     class { 'amavis::config':
-      final_virus_destiny      => 'D_REJECT; # (defaults to D_BOUNCE)',
+      final_virus_destiny => 'D_REJECT',
+      extra_parameters    => [
+        '$sa_spam_subject_tag'   => '"[SPAM]"',
+        '$sa_spam_report_header' => 1,
+      ]
     }
 
-It will just install the amavis package and ensure that amavis is rejecting content containg a virus.
+It will just install the amavis package, ensure that amavis is rejecting content containg a virus and implements some extra parameters.
