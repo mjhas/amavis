@@ -10,13 +10,13 @@ class amavis::config(
   file { '/etc/amavis/conf.d/50-user':
     ensure  => present,
     content => template('amavis/50-user'),
-    notify  => Service['amavis'],
+    notify  => Service['amavisd'],
     require => Exec['amavis'],
   }
   file { '/etc/amavis/conf.d/15-content_filter_mode':
     ensure  => present,
     content => template('amavis/15-content_filter_mode'),
     require => Exec['amavis'],
-    notify  => Service['amavis'],
+    notify  => Service['amavisd'],
   }
 }

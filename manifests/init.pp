@@ -19,7 +19,7 @@ class amavis(
     logoutput   => true,
     refreshonly => true,
   }
-  service { 'amavis':
+  service { 'amavisd':
     ensure  => running,
     require => Exec['amavis'],
   }
