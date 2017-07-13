@@ -17,7 +17,7 @@ use strict;
 
 @whitelist_sender_maps = (['<%= @real_whitelist %>']);
 
-$interface_policy{'10027'} = 'WHITELIST';
+$interface_policy{'10023'} = 'WHITELIST';
 $policy_bank{'WHITELIST'} = { # mail from the pickup daemon
   bypass_spam_checks_maps   => ['@whitelist_sender_maps'],  # don't spam-check this mail
   bypass_banned_checks_maps => ['@whitelist_sender_maps'],  # don't banned-check this mail
@@ -70,7 +70,7 @@ $unix_socketname = "/var/run/amavisd/amavisd.sock";  # amavisd-release or amavis
                # option(s) -p overrides $inet_socket_port and $unix_socketname
 
 # $inet_socket_port = 10024;   # listen on this local TCP port(s)
-$inet_socket_port = [10024,10027];  # listen on multiple TCP ports
+$inet_socket_port = [10024,10023];  # listen on multiple TCP ports
 
 $policy_bank{'MYNETS'} = {   # mail originating from @mynetworks
   originating => 1,  # is true in MYNETS by default, but let's make it explicit
