@@ -8,10 +8,11 @@ use strict;
 
 
 # COMMONLY ADJUSTED SETTINGS:
-
-# @bypass_virus_checks_maps = (1);  # controls running of anti-virus code
-# @bypass_spam_checks_maps  = (1);  # controls running of anti-spam code
-# $bypass_decode_parts = 1;         # controls running of decoders&dearchivers
+<% if @disable_scanning -%>
+@bypass_virus_checks_maps = (1);  # controls running of anti-virus code
+@bypass_spam_checks_maps  = (1);  # controls running of anti-spam code
+$bypass_decode_parts = 1;         # controls running of decoders&dearchivers
+<% end -%>
 
 <% if @whitelist -%>
 
@@ -24,6 +25,12 @@ $policy_bank{'WHITELIST'} = { # mail from the pickup daemon
   bypass_header_checks_maps => ['@whitelist_sender_maps'],  # don't header-check this mail
   bypass_virus_check_maps   => ['@whitelist_sender_maps'],  # don't virus-check this mail
 };
+
+<% end -%>
+
+<% if @blacklist -%>
+
+@blacklist_sender_maps = (['<%= @real_blacklist %>']);
 
 <% end -%>
 
